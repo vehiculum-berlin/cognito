@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   s.add_dependency "rails", "~> 5.1.6", ">= 5.1.6.2"
-  s.add_dependency "excon", "~> 0.71.0", ">= 0.16.0"
+  s.add_dependency "excon", "~> 0.16.0", ">= 0.16.0"
   s.add_dependency "json-jwt", "~> 1.11.0", ">= 1.11.0"
 
   s.add_development_dependency "sqlite3"
