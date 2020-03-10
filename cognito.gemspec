@@ -21,4 +21,6 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 5.1.6", ">= 5.1.6.2"
   s.add_dependency "excon", ">= 0.16.0", "< 1.0"
   s.add_dependency "json-jwt", "~> 1.11.0", ">= 1.11.0"
+
+  s.add_development_dependency "sqlite3"
 end
