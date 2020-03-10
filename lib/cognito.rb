@@ -39,3 +39,5 @@ module Cognito
     yield self
   end
 end
+
+require 'cognito/railtie' if defined?(Rails)
