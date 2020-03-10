@@ -9,6 +9,8 @@ module Cognito
         warn '[Cognito] Cognito is not configured in the application and will not work properly.' +
           ' Use `rails generate cognito:install` to generate the Cognito configuration.'
       end
+
+      ActionView::Base.send :include, Cognito::Helpers
     end
   end
 end
