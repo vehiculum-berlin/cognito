@@ -33,7 +33,7 @@ module Cognito
         return nil
       end
 
-      json = JSON.parse(resp.body)
+      json = ::JSON.parse(resp.body)
 
       tokens = {
         'id_token' => json['AuthenticationResult']['IdToken'],
@@ -56,10 +56,10 @@ module Cognito
       resp = ::Excon.post(Cognito::Routes.token_uri,
                         :user => Cognito.client_id,
                         :password => Cognito.client_secret,
-                        :body => URI.encode_www_form(params),
+                        :body => ::URI.encode_www_form(params),
                         :headers => { "Content-Type" => "application/x-www-form-urlencoded"})
 
-      Cognito::Tokens.new(Cognito::Keys.keys, JSON.parse(resp.body))
+      Cognito::Tokens.new(Cognito::Keys.keys, ::JSON.parse(resp.body))
     end
   end
 end

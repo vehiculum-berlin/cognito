@@ -1,3 +1,8 @@
+require "excon"
+require "json"
+require "json/jwt"
+require "uri"
+
 require "cognito/railtie"
 require "cognito/authenticate"
 require "cognito/routes"

@@ -9,16 +9,16 @@ module Cognito
       end
 
       def authorize_uri
-        URI.join(oauth_uri, AUTHORIZE_PATH).to_s
+        ::URI.join(oauth_uri, AUTHORIZE_PATH).to_s
       end
 
       def token_uri
-        URI.join(oauth_uri, TOKEN_PATH).to_s
+        ::URI.join(oauth_uri, TOKEN_PATH).to_s
       end
 
       def jwks_uri(pool_id)
         path = "/%s/.well-known/jwks.json" % [pool_id]
-        URI.join(idp_uri, path).to_s
+        ::URI.join(idp_uri, path).to_s
       end
 
       def idp_uri

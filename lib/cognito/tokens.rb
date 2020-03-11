@@ -31,7 +31,7 @@ module Cognito
     def parse_token(tok_str)
       hdr = jwt_header(tok_str)
       key = @cognito_jwt_keys.get(hdr['kid'], hdr['alg'])
-      decoded = JSON::JWT.decode(tok_str, key)
+      decoded = ::JSON::JWT.decode(tok_str, key)
 
       decoded
     end
@@ -42,7 +42,7 @@ module Cognito
         raise "Not enough parts from JWT: #{jwt_string}"
       end
 
-      JSON.parse(Base64.decode64(parts[0]))
+      ::JSON.parse(Base64.decode64(parts[0]))
     end
   end
 end
