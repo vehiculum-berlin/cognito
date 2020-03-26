@@ -24,4 +24,6 @@ Gem::Specification.new do |s|
   s.add_dependency "json-jwt", "~> 1.11.0", ">= 1.11.0"
 
   s.add_development_dependency "sqlite3"
+  s.add_development_dependency "minitest"
+  s.add_development_dependency "minitest-utils"
 end

@@ -3,14 +3,14 @@ require "json"
 require "json/jwt"
 require "uri"
 
-require "cognito/railtie"
-require "cognito/authenticate"
-require "cognito/routes"
-require "cognito/tokens"
-require "cognito/keys"
-require "cognito/helpers"
-
 module Cognito
+  extend ActiveSupport::Autoload
+
+  autoload :Authenticate
+  autoload :Routes
+  autoload :Tokens
+  autoload :Keys
+  autoload :Helper
 
   mattr_accessor :region
   @@region = nil
