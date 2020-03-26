@@ -10,7 +10,7 @@ module Cognito
   autoload :Routes
   autoload :Tokens
   autoload :Keys
-  autoload :Helper
+  autoload :Helpers
 
   mattr_accessor :region
   @@region = nil
