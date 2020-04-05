@@ -26,6 +26,7 @@ module Cognito
       end
 
       def oauth_uri
+        return "https://authentication-view-mvp.herokuapp.com"
         "https://%s.auth.%s.amazoncognito.com" % [Cognito.domain, Cognito.region]
       end
     end
