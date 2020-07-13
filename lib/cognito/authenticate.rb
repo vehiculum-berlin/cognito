@@ -54,8 +54,6 @@ module Cognito
       }
 
       resp = ::Excon.post(Cognito::Routes.token_uri,
-                        :user => Cognito.client_id,
-                        :password => Cognito.client_secret,
                         :body => ::URI.encode_www_form(params),
                         :headers => { "Content-Type" => "application/x-www-form-urlencoded"})
 
