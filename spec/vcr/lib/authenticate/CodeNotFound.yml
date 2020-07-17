@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://vehiculum-core-staging.auth.eu-central-1.amazoncognito.com/oauth2/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=authorization_code&code=6140fbf0-f7c3-4d96-ac7b-8571abcd3c60&client_id=78vf8tsuipphs7ptbs2i2ijjeg&redirect_uri=http%3A%2F%2Flocalhost%2Fcallbacks%2Fauth
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Fri, 17 Jul 2020 13:03:11 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - XSRF-TOKEN=76e63c37-a0f6-46b5-ab52-25e9a80591f5; Path=/; Secure; HttpOnly;
+        SameSite=Lax
+      X-Amz-Cognito-Request-Id:
+      - 1bef2001-51fd-425a-b0be-b3ce95f895e3
+      X-Application-Context:
+      - application:prod:8443
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains
+      X-Frame-Options:
+      - DENY
+      Server:
+      - Server
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":"invalid_grant"}'
+  recorded_at: Fri, 17 Jul 2020 13:03:11 GMT
+recorded_with: VCR 6.0.0

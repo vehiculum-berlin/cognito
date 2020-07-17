@@ -23,7 +23,12 @@ Gem::Specification.new do |s|
   s.add_dependency "json", ">= 1.8.6"
   s.add_dependency "json-jwt", "~> 1.11.0", ">= 1.11.0"
 
+  s.add_development_dependency "pry"
+  s.add_development_dependency "rspec"
+  s.add_development_dependency "rubocop"
+  s.add_development_dependency "rubocop-performance"
+  s.add_development_dependency "rubocop-rspec"
   s.add_development_dependency "sqlite3"
-  s.add_development_dependency "minitest"
-  s.add_development_dependency "minitest-utils"
+  s.add_development_dependency "vcr"
+  s.add_development_dependency "webmock"
 end
