@@ -6,16 +6,6 @@ module Cognito
     class InvalidRefreshToken < StandardError; end
 
     def sign_in_token(code)
-      lookup_auth_code(code)
-    end
-
-    def refresh_token(current_refresh_token)
-      request_refresh_token(current_refresh_token)
-    end
-
-    private
-
-    def lookup_auth_code(code)
       params = {
         grant_type: 'authorization_code',
         code: code,
@@ -32,7 +22,7 @@ module Cognito
       Cognito::Tokens.new(Cognito::Keys.keys, response_body)
     end
 
-    def request_refresh_token(current_refresh_token)
+    def refresh_token(current_refresh_token)
       params = {
         ClientId: Cognito.client_id,
         AuthFlow: 'REFRESH_TOKEN_AUTH',
