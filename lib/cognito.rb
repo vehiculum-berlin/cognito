@@ -7,6 +7,7 @@ module Cognito
   extend ActiveSupport::Autoload
 
   autoload :Authenticate
+  autoload :User
   autoload :Routes
   autoload :Tokens
   autoload :Keys

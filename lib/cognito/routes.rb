@@ -21,6 +21,10 @@ module Cognito
         ::URI.join(idp_uri, path).to_s
       end
 
+      def remove_user_uri
+        idp_uri
+      end
+
       def idp_uri
         "https://cognito-idp.%s.amazonaws.com" % [Cognito.region]
       end
