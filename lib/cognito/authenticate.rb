@@ -12,7 +12,7 @@ module Cognito
         client_id: Cognito.client_id,
         redirect_uri: Cognito.redirect_uri
       }
-      resp = ::Excon.post(Cognito::Routes.token_uri,
+      resp = ::HTTParty.post(Cognito::Routes.token_uri,
                         :body => ::URI.encode_www_form(params),
                         :headers => { "Content-Type" => "application/x-www-form-urlencoded"})
       response_body = ::JSON.parse(resp.body)
@@ -34,12 +34,12 @@ module Cognito
         "X-Amz-Target": "AWSCognitoIdentityProviderService.InitiateAuth",
         "Content-Type": "application/x-amz-json-1.1"
       }
-      response = ::Excon.post(
+      response = ::HTTParty.post(
         Cognito::Routes.refresh_token_uri, :headers => hdrs, :body => params.to_json
       )
       response_body = ::JSON.parse(response.body)
 
-      raise InvalidRefreshToken, response_body["message"] if response.status != 200
+      raise InvalidRefreshToken, response_body["message"] if response.code != 200
 
       tokens = {
         'id_token' => response_body['AuthenticationResult']['IdToken'],

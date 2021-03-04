@@ -8,3 +8,4 @@ test/dummy/tmp/
 Dockerfile
 vendor/bundle
 .ruby-version
+layer/**/*
