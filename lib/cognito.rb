@@ -1,4 +1,4 @@
-require "excon"
+require "httparty"
 require "json"
 require "json/jwt"
 require "uri"

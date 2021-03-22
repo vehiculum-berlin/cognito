@@ -2,7 +2,7 @@ module Cognito
   module Keys
     class << self
       def keys
-        resp = ::Excon.get(key_url)
+        resp = ::HTTParty.get(key_url)
         keys = ::JSON.parse(resp.body)
         keymap = ::Hash[keys["keys"].map {|key|
                         [key["kid"], JSON::JWK.new(key)]
