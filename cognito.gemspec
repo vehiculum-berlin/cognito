@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", "~> 5.1.6", ">= 5.1.6.2"
   s.add_dependency "httparty"
-  s.add_dependency "json"
+  s.add_dependency "json", ">= 2.1"
   s.add_dependency "json-jwt", "~> 1.11.0", ">= 1.11.0"
 
   s.add_development_dependency "pry"
