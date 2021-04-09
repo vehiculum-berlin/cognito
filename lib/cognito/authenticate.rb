@@ -13,8 +13,8 @@ module Cognito
         redirect_uri: Cognito.redirect_uri
       }
       resp = ::HTTParty.post(Cognito::Routes.token_uri,
-                        query: ::URI.encode_www_form(params),
-                        headers: { "Content-Type" => "application/x-www-form-urlencoded"})
+                        :body => ::URI.encode_www_form(params),
+                        :headers => { "Content-Type" => "application/x-www-form-urlencoded"})
       response_body = ::JSON.parse(resp.body)
 
       raise CodeNotFoundError, response_body if response_body['error'].present?
