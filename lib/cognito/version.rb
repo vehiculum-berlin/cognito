@@ -1,3 +1,3 @@
 module Cognito
-  VERSION = '0.4.6'.freeze
+  VERSION = '0.4.7'.freeze
 end
