@@ -17,7 +17,7 @@ module Cognito
                         :headers => { "Content-Type" => "application/x-www-form-urlencoded"})
       response_body = ::JSON.parse(resp.body)
 
-      raise CodeNotFoundError, response_body if response_body['error'].present?
+      raise CodeNotFoundError, 'Auth code consumed or does not exist' if response_body['error'].present?
 
       Cognito::Tokens.new(Cognito::Keys.keys, response_body)
     end
