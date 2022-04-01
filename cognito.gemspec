@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.test_files  = Dir["test/**/*.rb"]
   s.require_paths = ["lib"]
 
-  s.add_dependency "rails", "~> 5.1.6", ">= 5.1.6.2"
+  s.add_dependency "rails", ">= 5.1"
   s.add_dependency "httparty"
   s.add_dependency "json", ">= 2.1"
   s.add_dependency "json-jwt", "~> 1.11.0", ">= 1.11.0"

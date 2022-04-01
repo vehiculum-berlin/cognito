@@ -9,3 +9,4 @@ Dockerfile
 vendor/bundle
 .ruby-version
 layer/**/*
+.ruby-gemset
